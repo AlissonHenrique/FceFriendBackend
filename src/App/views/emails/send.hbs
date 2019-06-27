@@ -1,0 +1,22 @@
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Olá, {{ ad.name }}</p>
+  <p>Você se inscreveu em um curso de {{ad.curse}} Voltare Educacional.</p>
+
+  <p>Para finalizar sua matrícula clique no botão abaixo para verificar e aceitar o seu contrato.</p>
+
+  <p><a href="https://front-aceite-voltaire.herokuapp.com/contrato?{{ad.id}}&{{ad.name}}&{{ad.curse}}&{{ad.modalidade}}"
+      target="_blank">veja
+      seu contrato</a></p>
+</body>
+
+</html>
