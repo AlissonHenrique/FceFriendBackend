@@ -5,7 +5,7 @@ class MailController {
     const { name, email, agencia, conta } = req.body;
 
     await Mail.sendMail({
-      from: "Voltaite Ed <no-reply@eadvoltaire.com.br>'",
+      from: "FCE <no-reply@eadvoltaire.com.br>'",
       to: "alisson@fce.edu.br",
       subject: "Promoção fechou Ganhou",
       html: `Nome: ${name} <br/> Email: ${email} <br/> Agência: ${agencia} <br/> Conta: ${conta}`
