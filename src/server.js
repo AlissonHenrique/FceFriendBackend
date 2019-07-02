@@ -6,7 +6,7 @@ const databaseConfig = require("./config/database");
 
 class App {
   constructor() {
-    this.express = express().use(cors());
+    this.express = express();
     this.isDev = process.env.NODE_ENV !== "production";
     this.database();
     this.middlewares();
@@ -21,6 +21,7 @@ class App {
   }
   middlewares() {
     this.express.use(express.json());
+    this.express.use(cors());
   }
 
   routes() {
