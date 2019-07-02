@@ -3,14 +3,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const databaseConfig = require("./config/database");
-var app = express();
-app.use(cors());
+
 class App {
   constructor() {
     this.express = express();
     this.isDev = process.env.NODE_ENV !== "production";
     this.database();
-    this.express.use(cors());
     this.middlewares();
     this.routes();
   }
@@ -23,6 +21,7 @@ class App {
   }
   middlewares() {
     this.express.use(express.json());
+    this.express.use(cors());
   }
 
   routes() {
