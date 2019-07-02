@@ -35,6 +35,18 @@ const AdFriendSchema = new mongoose.Schema({
     type: String,
     required: false
   },
+  status: {
+    type: String,
+    default: "Aguardando"
+  },
+  voucher: {
+    type: String,
+    default: "Aguardando pagamento"
+  },
+  dataVencimento: {
+    type: Date,
+    required: false
+  },
 
   created_at: {
     type: Date,
