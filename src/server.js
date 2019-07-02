@@ -8,7 +8,7 @@ class App {
     this.express = express();
     this.isDev = process.env.NODE_ENV !== "production";
     this.database();
-    this.express.use(cors({ origin: "*" }));
+    this.express.use(cors({ origin: "http://www.fechouganhou.com.br" }));
     this.middlewares();
     this.routes();
   }
