@@ -1,4 +1,4 @@
-app.use(function(req, res, next) {
+module.exports = async (req, res, next) => {
   // Website you wish to allow to connect
   res.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -20,4 +20,4 @@ app.use(function(req, res, next) {
 
   // Pass to next layer of middleware
   next();
-});
+};
