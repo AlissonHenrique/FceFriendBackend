@@ -1,16 +1,14 @@
 require("dotenv").config();
 const express = require("express");
-const cors = require("cors");
 const mongoose = require("mongoose");
-
+const cors = require("cors");
 const databaseConfig = require("./config/database");
-
 class App {
   constructor() {
     this.express = express();
-    this.express.use(cors({ origin: "*" }));
     this.isDev = process.env.NODE_ENV !== "production";
     this.database();
+    this.express.use(cors({ origin: "*" }));
     this.middlewares();
     this.routes();
   }

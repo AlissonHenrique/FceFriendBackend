@@ -1,4 +1,5 @@
 const Ad = require("../models/AdFriend");
+const Mail = require("../services/Mail");
 const cpfvalue = require("@fnando/cpf/dist/node");
 
 class AdFriendController {
@@ -18,7 +19,6 @@ class AdFriendController {
 
     return res.json(ad);
   }
-
   async show(req, res) {
     const ad = await Ad.findById(req.params.id);
 
@@ -51,7 +51,6 @@ class AdFriendController {
 
     return res.json(ad);
   }
-
   async destroy(req, res) {
     await Ad.findByIdAndDelete(req.params.id);
     return res.send(Ad);
