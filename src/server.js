@@ -8,7 +8,7 @@ const databaseConfig = require("./config/database");
 class App {
   constructor() {
     this.express = express();
-
+    this.express.use(cors());
     this.isDev = process.env.NODE_ENV !== "production";
     this.database();
     this.middlewares();
@@ -27,7 +27,6 @@ class App {
 
   routes() {
     this.express.use(require("./routes"));
-    this.express.use(cors({ origin: "https://www.fechouganhou.com.br" }));
   }
 }
 module.exports = new App().express;
