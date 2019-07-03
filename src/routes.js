@@ -8,14 +8,14 @@ const MaillController = require("./App/controllers/MaillController");
 const Request = require("./App/middlewares/request");
 
 routes.post("/users", UserController.store);
-routes.post("/session", SessionController.store);
+routes.post("/session", Request, SessionController.store);
 
 routes.post("/mail", MaillController.store);
 
 routes.get("/test", (req, res) => res.send("ok"));
 
 //rotas autenticadas
-routes.use(authMiddleware, Request);
+routes.use(authMiddleware);
 routes.get("/users", UserController.index);
 ///rotas register
 routes.get("/ads", AdFriendController.index);
