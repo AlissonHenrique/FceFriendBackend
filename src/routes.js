@@ -12,7 +12,7 @@ routes.post("/session", corsMiddleware, SessionController.store);
 
 routes.post("/mail", MaillController.store);
 
-routes.get("/test", (req, res) => res.send("ok"));
+routes.get("/teste", (req, res) => res.send("ok"));
 
 //rotas autenticadas
 routes.use(authMiddleware);
