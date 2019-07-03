@@ -5,9 +5,10 @@ const SessionController = require("./App/controllers/SessionController");
 const AdFriendController = require("./App/controllers/AdFriendController");
 const authMiddleware = require("./App/middlewares/auth");
 const MaillController = require("./App/controllers/MaillController");
+const corsMiddleware = require("./App/middlewares/cors");
 
 routes.post("/users", UserController.store);
-routes.post("/session", SessionController.store);
+routes.post("/session", corsMiddleware, SessionController.store);
 
 routes.post("/mail", MaillController.store);
 
