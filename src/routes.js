@@ -8,7 +8,14 @@ const MaillController = require("./App/controllers/MaillController");
 const cors = require("cors");
 
 routes.post("/users", UserController.store);
-routes.post("/session", cors(), SessionController.store);
+routes.post(
+  "/session",
+  cors({
+    origin: "https://www.fechouganhou.com.br",
+    optionsSuccessStatus: 200
+  }),
+  SessionController.store
+);
 
 routes.post("/mail", MaillController.store);
 
