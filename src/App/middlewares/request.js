@@ -9,5 +9,6 @@ module.exports = (req, res, next) => {
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, OPTIONS, PATCH, DELETE, HEAD"
   );
+  console.log("header");
   next();
 };
