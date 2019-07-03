@@ -27,7 +27,7 @@ class App {
 
   routes() {
     this.express.use(require("./routes"));
-    this.express.use(cors());
+    this.express.use(cors(console.log("cors")));
   }
 }
 module.exports = new App().express;
