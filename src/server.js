@@ -9,7 +9,7 @@ const corsOptions = {
 };
 class App {
   constructor() {
-    this.express = express().use(cors());
+    this.express = express();
     this.isDev = process.env.NODE_ENV !== "production";
     this.database();
     this.middlewares();
