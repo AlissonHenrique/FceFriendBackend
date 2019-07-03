@@ -3,10 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const databaseConfig = require("./config/database");
-const corsOptions = {
-  origin: "https://fcefriendfront.herokuapp.com",
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+
 class App {
   constructor() {
     this.express = express();
@@ -28,7 +25,7 @@ class App {
 
   routes() {
     this.express.use(require("./routes"));
-    this.express.use(cors(corsOptions));
+    this.express.use(cors());
   }
 }
 module.exports = new App().express;
