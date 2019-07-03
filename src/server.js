@@ -23,11 +23,11 @@ class App {
   }
   middlewares() {
     this.express.use(express.json());
-    this.express.use(cors());
   }
 
   routes() {
     this.express.use(require("./routes"));
+    this.express.use(cors());
   }
 }
 module.exports = new App().express;
