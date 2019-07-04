@@ -45,7 +45,7 @@ const AdFriendSchema = new mongoose.Schema({
   },
   dataVencimento: {
     type: String,
-    required: false
+    default: "Aguardando"
   },
   code: {
     type: String,
