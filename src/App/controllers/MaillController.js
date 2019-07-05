@@ -6,7 +6,7 @@ class MailController {
 
     await Mail.sendMail({
       from: "FCE <no-reply@eadvoltaire.com.br>'",
-      to: "alisson@fce.edu.br",
+      to: "alisson@fce.edu.br,caroline.comercial.com.br,alesandra.financeiro@fce.edu.br",
       subject: "Promoção fechou Ganhou",
       html: `Nome: ${name} <br/> Email: ${email} <br/> Agência: ${agencia} <br/> Conta: ${conta}`
     });
